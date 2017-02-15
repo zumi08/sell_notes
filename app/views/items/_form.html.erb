@@ -3,7 +3,10 @@
   <%= f.input :detail %>
   <%= f.input :email %>
   <%= f.input :price %>
-
+  <div class="form-group">
+    <%= f.label :file %>
+    <%= f.file_field :file,class: 'filestyle' %>
+  </div>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 items_path, :class => 'btn btn-default' %>
