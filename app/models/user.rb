@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :items
+  belongs_to :college
 
   validates :name,
     uniqueness: { case_sensitive: :false },
