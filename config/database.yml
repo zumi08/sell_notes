@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
   database: heroku_0cc487865c58f1b
   username: b7de1ce9f8a3a4
   password: <%= ENV['DATABASE_PASSWORD'] %>
