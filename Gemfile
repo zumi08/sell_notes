@@ -41,6 +41,7 @@ gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpry
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
 gem 'devise'
+gem 'honoka-rails', '>= 3.3.6.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

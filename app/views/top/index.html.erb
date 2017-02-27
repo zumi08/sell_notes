@@ -1,1 +1,139 @@
-<p>sell_noteへようこそ！</p>
+
+<aside class="v4-dev">
+  <a href="http://v4-alpha.honokak.osaka/">サービス開始しました！</a>
+</aside>
+
+<div class="jumbotron special">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 outline">
+        <h1>Share Notes</h1>
+        <p>Share Notes は大学生のノート交渉アプリです。</p>
+        <div class="download">
+          <a href="/users/sign_in" class="btn btn-warning btn-lg last-release-download-link"><i class="fa fa-github-alt"></i>さっそく登録</a>
+          <a href="/items/index" class="btn btn-primary btn-lg"><i class="fa fa-play"></i>出品リスト</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<aside class="social">
+  <div class="social-button">
+    <ul>
+      <li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-dnt="true">ツイート</a></li>
+      <li><div class="fb-like" data-href="http://honokak.osaka/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>
+      <li><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a></li>
+    </ul>
+  </div>
+</aside>
+
+<section class="section section-default point">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 subtitle">
+        <h2>Share Notesは時間の有効的な利用を助けます</h2>
+        <p>share notesは開発中のサービスです　以下は予定です。</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 point-box">
+        <div class="point-circle start">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="point-description">
+          <h4>お互いの利益に</h4>
+          <p>授業に毎回出ている人に利益を、出れなかった人に救済のチャンスをもたらします。</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 point-box">
+        <div class="point-circle replace">
+          <i class="fa fa-refresh"></i>
+        </div>
+        <div class="point-description">
+          <h4>オフライン取引とオンライン取引に対応</h4>
+          <p>ネット上のみで即座に交渉を完結できるオンライン取引。実際に学校で会って取引できるオフライン取引のどちらもサポートします。</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 point-box">
+        <div class="point-circle compass">
+          <i class="fa fa-github-alt"></i>
+        </div>
+        <div class="point-description">
+          <h4>安心の決済</h4>
+          <p>paypal必須</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 point-box">
+        <div class="point-circle japanese">
+          <span class="icon-jp"></span>
+        </div>
+        <div class="point-description">
+          <h4>Optimized Japanese</h4>
+          <p>本家Bootstrapでは指定されていない日本語フォントに関する指定が行われているため、美しく日本語を表示できます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-inverse getting-started">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 subtitle">
+        <h2>さあ、はじめましょう。</h2>
+        <p>利用はとっても簡単です</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="form-group">
+          <a href="/users/sign_up" class="btn btn-primary btn-lg last-release-download-link"></i>会員登録</a>
+        </div>
+        <p>説明します説明します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61413040-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+new Clipboard('.btn');
+$(document).ready(function(e) {
+	$.when(
+		$.ajax({
+			url: 'https://api.github.com/repos/windyakin/Honoka/releases/latest',
+			type: 'get',
+			dataType: 'json'
+		}),
+		$.ajax({
+			url: 'https://cdn.rawgit.com/windyakin/Honoka/master/bower.json',
+			type: 'get',
+			dataType: 'json'
+		})
+	)
+	.done(function(last, base) {
+		$('.last-version').text(last[0].tag_name.split('v')[1]);
+		$('.base-version').text(base[0].devDependencies.bootstrap);
+		$('.last-release-download-link').attr({'href': '//github.com/windyakin/Honoka/releases/tag/' + last[0].tag_name })
+	});
+});
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=238369762859730&version=v2.3";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+</body>
