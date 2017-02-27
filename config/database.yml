@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: sell_notes_production
-  username: sell_notes
-  password: <%= ENV['SELL_NOTES_DATABASE_PASSWORD'] %>
+  database: heroku_0cc487865c58f1b
+  username: b7de1ce9f8a3a4
+  password: <%= ENV['DATABASE_PASSWORD'] %>
