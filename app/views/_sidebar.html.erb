@@ -1,0 +1,19 @@
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3>サイドバー</h3>
+            <% if user_signed_in? %>
+              <ul class="nav nav-list">
+                <li class="nav-header"><%= current_user.name %>さん</li>
+                <li><%= link_to "マイページ", "/mypage"  %></li>
+                <li><%= link_to "登録情報", "/users/edit"  %></li>
+              </ul>
+            <% else %>
+              <ul class="nav nav-list">
+                <li class="nav-header">ゲストさん</li>
+                <li><%= link_to "会員登録", "/users/sign_up"  %></li>
+                <li><%= link_to "ログイン", "/users/sign_in"  %></li>
+              </ul>
+            <% end %>
+          </div><!--/.well -->
+        </div><!--/span-->
+
