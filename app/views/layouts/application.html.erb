@@ -46,7 +46,11 @@
   <meta name="twitter:image" content="http://honokak.osaka/assets/img/sample.png">
   <meta name="twitter:description" content="Honokaは日本語表示に最適化されたオリジナルBootstrapテーマです。">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/example.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/example.css">
+  <% unless request.path == "/" %>
+    <link rel="stylesheet" type="text/css" href="/assets/bf_log/common.css">
+  <% end %>
+
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!--[if lt IE 9]>
@@ -97,12 +101,10 @@
     </div>
   </div>
 </header>
-
-
-          <%= bootstrap_flash %>
-          <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+<div class="main">
+ <%= bootstrap_flash %>
+ <%= yield %>
+</div>
 <footer class="small">
   <div class="social-button">
     <ul>
