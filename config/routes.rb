@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :users ,:only => [:index, :new]
   resources :items
   root 'top#index'
+  get '/:some' => 'contents#content'
+  get '/:symbol/:certain' => 'contents#content'
+  get '/*anithing' => 'contents#content'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
