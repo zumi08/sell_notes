@@ -131,7 +131,7 @@
                   <a href="/profile" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="/users/sing_out" class="btn btn-default btn-flat">Sign out</a>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </div>
               </li>
             </ul>

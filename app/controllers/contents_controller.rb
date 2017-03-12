@@ -2,6 +2,10 @@ class ContentsController < ApplicationController
   before_action :authenticate_user!
   layout 'af_log'
   def content
+    university_id = current_user.college.university_id
+    college_info_ids = University.find(university_id).colleges.pluck(:id)
+    @lecture_informations = LectureInformation.where(college_id: college_info_ids)
+
     if params[:some].present? && lookup_context.exists?("#{params[:some]}", "contents")
       return render action: "#{params[:some]}", layout: 'af_log'
     elsif params[:certain].present? && lookup_context.exists?("#{params[:certain]}", "contents/#{params[:symbol]}")
