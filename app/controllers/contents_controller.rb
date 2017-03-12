@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
     university_id = current_user.college.university_id
     college_info_ids = University.find(university_id).colleges.pluck(:id)
     @lecture_informations = LectureInformation.where(college_id: college_info_ids)
+    @new_notes = Item.where(college_id: college_info_ids).order("created_at DESC")
 
     if params[:some].present? && lookup_context.exists?("#{params[:some]}", "contents")
       return render action: "#{params[:some]}", layout: 'af_log'
