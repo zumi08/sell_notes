@@ -21,14 +21,15 @@ ActiveRecord::Schema.define(version: 20170313063113) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "detail",     limit: 65535
-    t.integer  "price",      limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "user_id",    limit: 4
-    t.integer  "college_id", limit: 4
-    t.integer  "year",       limit: 4
+    t.string   "title",         limit: 255
+    t.text     "detail",        limit: 65535
+    t.integer  "price",         limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "user_id",       limit: 4
+    t.integer  "college_id",    limit: 4
+    t.integer  "year",          limit: 4
+    t.integer  "hand_over_way", limit: 4
   end
 
   create_table "lecture_informations", force: :cascade do |t|
