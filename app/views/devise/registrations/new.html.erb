@@ -8,7 +8,7 @@
     <%= f.input :email, label:"メールアドレス",required: true %>
     <%= f.input :birthday, label:"誕生日",required: true %>
     <%= f.input :adress, label:"住んでいる県",required: true %>
-    <%= f.input :college, label:"学科" %>
+    <%= f.input :college_id, label:"学科" %>
     <%= f.input :password, label:"パスワード",required: true, hint: ("#{@minimum_password_length} 文字以上必須です" if @minimum_password_length) %>
     <%= f.input :password_confirmation, label:"パスワード再入力",required: true %>
   </div>
