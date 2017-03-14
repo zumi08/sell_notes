@@ -88,3 +88,8 @@ div.item_head{
   background: url(/th_10.jpg) repeat-x;
   padding-top: 10px;
 }
+@media screen and (min-width: 1025px){
+  div.form_left_fix{
+    padding-left:10px;
+  }
+}

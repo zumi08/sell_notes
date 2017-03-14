@@ -1,11 +1,17 @@
+<div class="form_left_fix">
 <%= simple_form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :title %>
-  <%= f.input :detail %>
+  <%= f.input :title, label:'ノート名' %>
+  <%= f.input :detail, label:'詳細' %>
   <div class="form-group">
-  <%= f.label :college_id, :class => "control-label"%>
+  <%= f.label :college_id, label:'配置学部', :class => "control-label"%>
   <%= f.collection_select :college_id, College.all, :id, :name,{},:class => "form-control",:prompt => "学部を選択してください。" %>
   </div>
-  <%= f.input :price %>
+  <%= f.input :year, label:'受講年度' %>
+  <%= f.input :price, label:'価格' %>
+  <div class="form-group" >
+    <%= f.label :hand_over_way, label:'受け渡し方法', :class => 'control-label' %>
+    <%= select :hand_over_way, :name, {"学校で手渡し" => 0, "pdf" => 1},{:prompt => '受け渡し方法を選択してください。'}, {class: 'form-control' } %>
+  </div>
   <div class="form-group">
     <%= f.label :file %>
     <%= f.file_field :file,class: 'filestyle' %>
