@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users ,:only => [:index, :new]
   resources :items
+  resources :lecture_informations
   root 'top#index'
   get '/:some' => 'contents#content'
   get '/:symbol/:certain' => 'contents#content'

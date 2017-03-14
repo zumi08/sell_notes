@@ -25,7 +25,7 @@
                 <% @lecture_informations.each do |info| %>
                   <li>
                     <!-- todo text -->
-                    <span class="text"><%= link_to "#{info.name}   by#{info.user.name}", "/lecture_information/#{info.id}" %></span>
+                    <span class="text"><%= link_to "#{info.name}   by#{info.user.name}", "/lecture_informations/#{info.id}" %></span>
                   </li>
                 <% end %>
               </ul>
