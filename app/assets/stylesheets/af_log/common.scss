@@ -1,0 +1,90 @@
+/* サンプルtableの共通設定
+----------------------------------------------------------- */
+table	{
+	border-collapse: collapse;	border-spacing: 0;
+	width: 100%;
+	margin-bottom: 30px;
+}
+th, td	{
+	padding: 10px 20px;
+	color: #1D5C79;
+}
+
+.item_table	{
+	border: 1px solid #DDD;
+}
+.item_table th	{
+	background: url(/th_10.jpg) repeat-x ;
+	border: 1px solid #DDD;
+	color: #333;
+}
+.item_table td	{
+	border: 1px solid #DDD;
+	color: #333;
+}
+dt.lecture {
+    font-weight: bold;
+    display: inline;
+    font-size: 120%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+dd.college {
+    display: inline;
+    font-size: 82%;
+}
+span.value {
+    display: inline;
+    font-size: 82%;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+dt.subject {
+    background-color: deepskyblue;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 10px;
+}
+.apartContents {
+    background: url(/images/campus/value/apart_border.gif) repeat-x bottom;
+}
+.apartContents div div div div div div {
+    overflow: hidden;
+    padding: 1px 1px 0;
+}
+.apartContents dl {
+    border:1px solid blue ;
+}
+
+.apartContents dt {
+    float: left;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 5px 4px;
+    background-color: deepskyblue;
+}
+.apartContents dd {
+background-color: lightskyblue;
+    padding: 5px 0 5px 0px;
+}
+.apartContents .message {
+    border: 1px solid #FEE871;
+    padding: 2px 6px;
+    margin-bottom: 10px;
+}
+.lecture_dl{
+    border: 1px solid deepskyblue;
+}
+.apartContents .year {
+    float: left;
+    width: 49.5%;
+}
+.apartContents .item_price {
+    float: right;
+    width: 49.5%;
+}
+div.item_head{
+  background: url(/th_10.jpg) repeat-x;
+  padding-top: 10px;
+}

@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( af_log.css )
 Rails.application.config.assets.precompile += %w( admin_lte/* )
 Rails.application.config.assets.precompile += %w( test.js )
+Rails.application.config.assets.precompile += %w( af_log/* )

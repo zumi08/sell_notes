@@ -1,23 +1,102 @@
 <%- model_class = Item -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="row">
+  <section class="col-lg-8">
+    <!--<div class="page-header">
+      <h1>ノート詳細</h1>
+    </div>
+    <table class="item_table">
+      <thead>
+        <tr>
+          <th>ノート名</th>
+          <td><%= @item.title %></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>作成者</th>
+          <td><%= @item.user.name %></td>
+        </tr>
+        <tr>
+          <th>価格(条件)</th>
+          <td><%= @item.price %></td>
+        </tr>
+        <tr>
+          <th>授業を受けた年</th>
+          <td><%= @item.year %>年度</td>
+        </tr>
+        <tr>
+          <th>説明</th>
+          <td><%= @item.detail %></td>
+        </tr>
+        <tr>
+          <th>引き渡し方法</th>
+          <td><%= @item.hand_over_way %></td>
+        </tr>
+      </tbody>
+      </table> -->
+
+    <dl class="lecture_dl">
+      <div class="item_head">
+        <dt class="lecture">
+        <%= @item.title %>
+        </dt>
+        <dd class="college">
+        <span><%= @item.user.college.university.name%></span>
+        <span><%= @item.college.name%></span>
+        </dd><!-- /.college -->
+      </div>
+      <dd>
+      <dl>
+        <dt class="subject">
+        <span>作成者  <%= @item.user.name%>さん</span>
+        </dt>
+        <!-- /.subject -->
+        <dd class="apartContents">
+        <div><div><div><div><div>
+                  <div>
+                    <div class="year"><div><div><div><div>
+                              <dl>
+                                <dt>授業を受けた年</dt>
+                                <dd><%= @item.year%>年</dd>
+                              </dl>
+                            </div></div></div></div></div><!-- /.year -->
+                    <div class="item_price"><div><div><div><div>
+                                      <dl>
+                                        <dt>希望価格</dt>
+                                        <dd><%= @item.price%>円</dd>
+                                      </dl>
+                                    </div></div></div></div></div><!-- /.item_price -->
+                  </div>
+                  <div class="apartBox">
+                    <div class="test"><div><div><div><div>
+                              <dl>
+                                <dt>詳細</dt>
+                                <dd>
+                                <p>
+                                  <%= @item.detail %>
+                                </p>
+                                </dd>
+                              </dl>
+                            </div></div></div></div></div><!-- /.test -->
+                  </div><!-- /.apartBox -->
+                </div></div></div></div></div>
+        </dd><!-- /.apartContents -->
+      </dl>
+      </dd>
+    </dl>
+
+    <%= link_to '戻る', :back ,:class => 'btn btn-default'  %>
+    <% if @item.user_id == current_user.id %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_item_path(@item), :class => 'btn btn-default' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        item_path(@item),
+        :method => 'delete',
+        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+        :class => 'btn btn-danger' %>
+    <% end %>
+</section>
+<section class="col-lg-4">
+  <div>広告</div>
+</section>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @item.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:detail) %>:</strong></dt>
-  <dd><%= @item.detail %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @item.price %></dd>
-</dl>
-
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              items_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_item_path(@item), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              item_path(@item),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
