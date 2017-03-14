@@ -14,6 +14,18 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>講義情報</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="/lecture_informations/new"><i class="fa fa-circle-o"></i>投稿する</a></li>
+            <li><a href="/lecture_informations"><i class="fa fa-circle-o"></i>探す</a></li>
+          </ul>
+        </li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>ノートを探す</span>
@@ -36,7 +48,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/items/new"><i class="fa fa-circle-o"></i>出品する</a></li>
-            <li><a href="/items"><i class="fa fa-circle-o"></i>自分の出品一覧</a></li>
+            <li><a href="user/#{current_user.id}/items"><i class="fa fa-circle-o"></i>自分の出品一覧</a></li>
           </ul>
         </li>
         <li>

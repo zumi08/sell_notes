@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :items
   resources :lecture_informations
   root 'top#index'
+
+  get '/user/:id/items' => 'items#index'
   get '/:some' => 'contents#content'
   get '/:symbol/:certain' => 'contents#content'
   # The priority is based upon order of creation: first created -> highest priority.
