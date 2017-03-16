@@ -24,6 +24,7 @@ class LectureInformationsController < ApplicationController
   # POST /lecture_informations
   # POST /lecture_informations.json
   def create
+    binding.pry
     @lecture_information = LectureInformation.new(lecture_information_params)
 
     respond_to do |format|

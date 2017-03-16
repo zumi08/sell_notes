@@ -48,7 +48,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/items/new"><i class="fa fa-circle-o"></i>出品する</a></li>
-            <li><a href="user/#{current_user.id}/items"><i class="fa fa-circle-o"></i>自分の出品一覧</a></li>
+            <li><a href="/user/<%= current_user.id %>/items"><i class="fa fa-circle-o"></i>自分の出品一覧</a></li>
           </ul>
         </li>
         <li>
@@ -60,10 +60,6 @@
           </a>
         </li>
         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>所有しているノート</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item_file = @item.upload_file
   end
 
   # GET /items/new
@@ -28,12 +29,14 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    file = item_params[:file]
-    file_name = file.original_filename
-    result = uploadpdf(file,file_name)
 
     respond_to do |format|
       if @item.save
+        if item_params[:file].present?
+          file = item_params[:file]
+          file_name = file.original_filename
+          result = uploadpdf(file,file_name)
+        end
         format.html { redirect_to @item, notice: '投稿に成功しました。' }
         format.json { render :show, status: :created, location: @item }
       else
@@ -87,6 +90,11 @@ class ItemsController < ApplicationController
         result = 'ファイルサイズは10MBまでです。'
       else
         File.open("public/user_upload_pdf/#{file_name.toutf8}", 'wb') { |f| f.write(file_object.read) }
+        upfile = UploadFile.new
+        upfile.name = file_name
+        upfile.item_id = @item.id
+        binding.pry
+        upfile.save
         result = "success"
       end
       return result

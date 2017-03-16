@@ -1,10 +1,24 @@
-<%= simple_form_for(@lecture_information) do |f| %>
+<div class="form_left_fix">
+<%= simple_form_for @lecture_information, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+  <%= f.input :name, label:'講義名' %>
+  <%= f.input :detail, label:'詳細' %>
+  <div class="form-group">
+  <%= f.label :college_id, label:'配置学部', :class => "control-label"%>
+  <%= f.collection_select :college_id, College.all, :id, :name,{},:class => "form-control",:prompt => "学部を選択してください。" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <%= f.input :teacher, label:'講師名' %>
+  <div class="form-group" >
+    <%= f.label :difficuty, label:'単位取得難易度', :class => 'control-label' %>
+    <%= select :difficulty, :name, {"楽々" => 0, "楽" => 1,"普通" => 2, "難しい" => 3, "地獄" => 4},{:prompt => '受け渡し方法を選択してください。'}, {class: 'form-control' } %>
   </div>
+  <div class="form-group" >
+    <%= f.label :get_process, label:'主な単位取得方法', :class => 'control-label' %>
+    <%= select :get_process, :name, {"テストのみ" => 0, "テストと出席" => 1,"出席のみ" => 2, "レポートのみ" => 3, "レポートと出席" => 4},{:prompt => '主な取得方法を選択してください。'}, {class: 'form-control' } %>
+  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                items_path, :class => 'btn btn-default' %>
 <% end %>
+</div>
