@@ -41,7 +41,7 @@ gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpry
   gem 'pry-stack_explorer' # スタックをたどれる
 gem 'devise'
 gem 'honoka-rails', '>= 3.3.6.3'
-
+gem 'pdfjs_rails' #pdfを簡単にview表示
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item_file = @item.upload_file
+    @item_file = @item.upload_file.first
   end
 
   # GET /items/new

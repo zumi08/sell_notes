@@ -96,7 +96,7 @@
         :class => 'btn btn-danger' %>
     <% end %>
     <% if @item_file.present? %>
-    
+      <object type="application/pdf" data="/user_upload_pdf/<%= @item_file.name %>" ></object>
     <% end %>
 </section>
 <section class="col-lg-4">
