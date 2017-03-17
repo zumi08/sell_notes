@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # 後から追加したもの
-gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem "less-rails", git: 'https://github.com/MustafaZain/less-rails'
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'simple_form'
 gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
