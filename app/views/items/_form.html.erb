@@ -2,8 +2,8 @@
 <%= simple_form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :title, label:'ノート名' %>
   <%= f.input :detail, label:'詳細' %>
-  <div class="form-group">
-  <%= f.label :college_id, label:'配置学部', :class => "control-label"%>
+    <div class="form-group">
+    <%= f.label :college_id, label:'配置学部', :class => "control-label"%>
   <%= f.collection_select :college_id, College.all, :id, :name,{},:class => "form-control",:prompt => "学部を選択してください。" %>
   </div>
   <%= f.input :year, label:'受講年度' %>
@@ -20,4 +20,5 @@
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 items_path, :class => 'btn btn-default' %>
-<% end %>
+            <% end %>
+

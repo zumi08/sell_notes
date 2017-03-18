@@ -4,7 +4,22 @@
 <div class="page-header">
   <h1>出品リスト</h1>
 </div>
-
+<%= search_form_for @q do |f| %>
+  <%# start 特定の文字列で始まる商品名で検索 %>
+  <%= f.label :title_cont, "商品名", :class => "control-label" %>
+  <%= f.search_field :title_cont, :class => "form-control" %>
+  <br />
+  <%# cont 文字列が含まれる商品説明で検索（not_cont で含まれない商品説明） %>
+  <%= f.label :college_id_eq, "学部",:class => "control-label" %>
+  <%= f.search_field :college_id_eq,:class => "form-control" %>
+  <br />
+  <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+  <%= f.label :price_lt, "値段(以下)",:class => "control-label" %>
+  <%= f.search_field :price_lt,:class => "form-control" %>
+  <br />
+  <%# 検索ボタン %>
+  <%= f.submit %>
+<% end %>
 <% @items.each do |item| %>
 <dl class="lecture_dl">
       <div class="item_head">

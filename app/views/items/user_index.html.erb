@@ -1,41 +1,25 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
-<section class="col-lg-7">
-<%- model_class = LectureInformation -%>
+<section class="col-lg-6">
+<%- model_class = Item -%>
 <div class="page-header">
-  <h1>講義情報リスト</h1>
+  <h1>出品リスト</h1>
 </div>
-<%= search_form_for @q do |f| %>
-  <%# start 特定の文字列で始まる商品名で検索 %>
-  <%= f.label :name_cont, "講義名",:class => "control-label" %>
-  <%= f.search_field :name_cont, :class => "form-control" %>
-  <br />
-  <%# cont 文字列が含まれる商品説明で検索（not_cont で含まれない商品説明） %>
-  <%= f.label :college_id_eq, "学部",:class => "control-label" %>
-  <%= f.search_field :college_id_eq,:class => "form-control" %>
-  <br />
-  <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
-  <%= f.label :teacher_cont, "先生",:class => "control-label" %>
-  <%= f.search_field :teacher_cont,:class => "form-control" %>
-  <br />
-  <%# 検索ボタン %>
-  <%= f.submit %>
-<% end %>
-<% @lecture_informations.each do |info| %>
+
+<% @items.each do |item| %>
 <dl class="lecture_dl">
       <div class="item_head">
         <dt class="lecture">
-        <%= info.name %>
+        <%= item.title %>
         </dt>
         <dd class="college">
-        <span><%= info.college.university.name%></span>
-        <span><%= info.college.name%></span>
+        <span><%= item.user.college.university.name%></span>
+        <span><%= item.college.name%></span>
         </dd><!-- /.college -->
       </div>
       <dd>
       <dl>
         <dt class="subject">
-        <span>作成者  <%= info.user.name%>さん</span>
+        <span>作成者  <%= item.user.name%>さん</span>
         </dt>
         <!-- /.subject -->
         <dd class="apartContents">
@@ -43,14 +27,14 @@
                   <div>
                     <div class="year"><div><div><div><div>
                               <dl>
-                                <dt>教授名</dt>
-                                <dd><%= info.teacher %></dd>
+                                <dt>授業を受けた年</dt>
+                                <dd><%= item.year%>年</dd>
                               </dl>
                             </div></div></div></div></div><!-- /.year -->
                     <div class="item_price"><div><div><div><div>
                                       <dl>
-                                        <dt>難易度</dt>
-                                        <dd><%= info.difficulty%></dd>
+                                        <dt>希望価格</dt>
+                                        <dd><%= item.price%>円</dd>
                                       </dl>
                                     </div></div></div></div></div><!-- /.item_price -->
                   </div>
@@ -60,7 +44,7 @@
                                 <dt>詳細</dt>
                                 <dd>
                                 <p>
-                                  <%= info.detail %>
+                                  <%= item.detail %>
                                 </p>
                                 </dd>
                               </dl>
@@ -70,10 +54,9 @@
         </dd><!-- /.apartContents -->
       </dl>
       </dd>
-    </dl>
+</dl>
 <% end %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_lecture_information_path,
+            new_item_path,
             :class => 'btn btn-primary' %>
 </section>
-

@@ -4,8 +4,14 @@ class ItemsController < ApplicationController
   layout 'af_log'
 
   # GET /items
-  # GET /items.json
+  # GET /items.jsoni
   def index
+    @q = Item.search(params[:q])
+    @items = @q.result(distinct: true)
+  end
+
+  # GET /user/:id/items(.:format)
+  def user_index
     @items = Item.where(user_id: params[:id])
   end
 
@@ -77,7 +83,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title,:college_id, :detail, :price, :file,:user_id,:year,:hand_over_way)
+      params.require(:item).permit(:title,:college_id, :detail, :price, :file,:user_id,:year,:hand_over_way,:university_id)
     end
 
     def uploadpdf(file_object,file_name)

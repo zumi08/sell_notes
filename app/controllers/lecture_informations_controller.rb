@@ -4,7 +4,8 @@ class LectureInformationsController < ApplicationController
   # GET /lecture_informations
   # GET /lecture_informations.json
   def index
-    @lecture_informations = LectureInformation.all
+    @q = LectureInformation.search(params[:q])
+    @lecture_informations = @q.result(distinct: true)
   end
 
   # GET /lecture_informations/1
