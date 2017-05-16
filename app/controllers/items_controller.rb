@@ -24,6 +24,13 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @colleges = []
+  end
+
+  def ajax_change_college
+    @colleges = College.where(university_id: params[:university_id])
+    #ここのparamsは上のcoffeeで書いたdataってとこのキーがparamsに入る
+    render json: @colleges #@テーブルをjson形式のハッシュにしてajaxの方に返す
   end
 
   # GET /items/1/edit

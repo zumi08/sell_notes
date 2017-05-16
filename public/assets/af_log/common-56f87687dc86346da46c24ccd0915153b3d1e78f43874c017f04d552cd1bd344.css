@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* サンプルtableの共通設定
+----------------------------------------------------------- */
+/* line 4, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* line 9, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+th, td {
+  padding: 10px 20px;
+  color: #1D5C79;
+}
+
+/* line 14, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.item_table {
+  border: 1px solid #DDD;
+}
+
+/* line 17, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.item_table th {
+  background: url(/th_10.jpg) repeat-x;
+  border: 1px solid #DDD;
+  color: #333;
+}
+
+/* line 22, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.item_table td {
+  border: 1px solid #DDD;
+  color: #333;
+}
+
+/* line 26, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+dt.lecture {
+  font-weight: bold;
+  display: inline;
+  font-size: 120%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+/* line 34, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+dd.college {
+  display: inline;
+  font-size: 82%;
+}
+
+/* line 38, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+span.value {
+  display: inline;
+  font-size: 82%;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+/* line 44, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+dt.subject {
+  background-color: deepskyblue;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+/* line 50, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents {
+  background: url(/images/campus/value/apart_border.gif) repeat-x bottom;
+}
+
+/* line 53, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents div div div div div div {
+  overflow: hidden;
+  padding: 1px 1px 0;
+}
+
+/* line 57, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents dl {
+  border: 1px solid blue;
+}
+
+/* line 61, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents dt {
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 5px 4px;
+  background-color: deepskyblue;
+}
+
+/* line 68, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents dd {
+  background-color: lightskyblue;
+  padding: 5px 0 5px 0px;
+}
+
+/* line 72, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents .message {
+  border: 1px solid #FEE871;
+  padding: 2px 6px;
+  margin-bottom: 10px;
+}
+
+/* line 77, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.lecture_dl {
+  border: 1px solid deepskyblue;
+}
+
+/* line 80, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents .year {
+  float: left;
+  width: 49.5%;
+}
+
+/* line 84, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+.apartContents .item_price {
+  float: right;
+  width: 49.5%;
+}
+
+/* line 88, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+div.item_head {
+  background: url(/th_10.jpg) repeat-x;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 1025px) {
+  /* line 93, /Users/zumi/self_apps/sell_notes/app/assets/stylesheets/af_log/common.scss */
+  div.form_left_fix {
+    padding-left: 10px;
+  }
+}

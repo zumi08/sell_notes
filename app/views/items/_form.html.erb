@@ -2,14 +2,13 @@
 <%= simple_form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :title, label:'ノート名' %>
   <%= f.input :detail, label:'詳細' %>
-    <div class="form-group">
-
-  <%= label :to_college,:university_id,'学校', :class => "control-label"%>
-  <%= collection_select :to_college,:university_id, University.all, :id, :name,{:prompt => "学校を選択してください。"},:class => "form-control" %>
+  <div class="form-group">
+    <%= label :to_college,:university_id,'学校', :class => "control-label"%>
+    <%= collection_select :to_college,:university_id, University.all, :id, :name,{:prompt => "学校を選択してください。"},:class => "form-control searchable" %>
   </div>
     <div class="form-group">
     <%= f.label :college_id, label:'配置学部', :class => "control-label"%>
-  <%= f.collection_select :college_id, College.all, :id, :name,{},:class => "form-control",:prompt => "学部を選択してください。" %>
+  <%= f.collection_select :college_id, @colleges, :id, :name,{},:class => "form-control",:prompt => "学部を選択してください。" %>
   </div>
   <%= f.input :year, label:'受講年度' %>
   <%= f.input :price, label:'価格' %>

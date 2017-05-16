@@ -2,6 +2,11 @@ console.log "yomikomi"
 $ ->
   app.initialize()
   app.setBind()
+  $(".searchable").select2({
+      width:      200,  # 横幅
+      allowClear: true  # x で選択したものを削除できる
+      # 詳細は http://ivaynberg.github.io/select2/#documentation
+    })
 
 app =
   initialize: ->
@@ -10,7 +15,6 @@ app =
     $(window).keyup (e) ->
       console.log "aa"
     $('#to_college_university_id').change ->
-      alert 'aaa'
       console.log 'bbb'
       app.ajaxChangeCollege(@)
 
@@ -19,14 +23,12 @@ app =
     $.ajax
       type: 'GET'
       dataType: 'json'
-      url: "/teachers/#{id}/ajax_change_certificate_branch"
+      url: "/items/new/ajax_change_college"
       data: {
-        certificate: $(obj).val()
+        university_id: $(obj).val()
       }
       success: (data) ->
-        $('#category_list').empty()
+        $('#item_college_id').empty()
         for obj in data
-          console.log obj
-          $('#category_list').append("""<li><a href="/teachers/#{obj.id}">#{obj.name}</a></li>""")
-
+          $("#item_college_id").append("<option value='#{obj.id}'>#{obj.name}</option>")
 

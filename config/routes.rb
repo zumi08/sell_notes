@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/user/:id/items' => 'items#user_index'
   get '/:some' => 'contents#content'
   get '/:symbol/:certain' => 'contents#content'
+  get '/items/new/ajax_change_college' => 'items#ajax_change_college'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
